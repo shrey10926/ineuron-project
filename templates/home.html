@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Wheat species classification </title>
+<style>
+body{
+   background-image:url({{ url_for('static', filename='wheat3.jpg')}});
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 100% 100%;
+}   
+</style>
+</head>
+
+    <center>
+
+    <h1> WHEAT SPECIES CLASSIFICATION </h1><br>
+    
+    <form method="POST", action="{{url_for('home')}}">
+       
+       <b> Compactness :  <input name="compactness" type="number" step="any" min="0" 
+                          class="form-control" required> <br><br>
+       
+       Kernel length : <input name="kernel_length" type="number" step="any" min="0" 
+                       class="form-control" required> <br><br>
+
+       Width : <input name="width" type="number" step="any" min="0" class="form-control" 
+               required> <br><br>            
+
+       Asymmetry coefficient : <input name="asymmetry_coef" type="number" step="any" min="0" 
+                        class="form-control" required> <br><br>
+       
+       Groove length : <input name="groove_length" type="number" step="any" min="0" 
+                       class="form-control" required> <br><br>
+       
+       <input type="submit" , value='predict!' >
+       
+    </form>
+    
+    </center>
+    
+</body>
+    
+</html>
