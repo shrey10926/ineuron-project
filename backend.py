@@ -21,29 +21,6 @@ def connect_to_device():
         return None
 
 
-# def send_to_device(command, net_conf, timeout=3, retries=1):
-
-#     '''
-#     Establishes a TCP connection to the device.
-#     Sends the formatted command string.
-#     '''
-
-#     ip = net_conf.get("device_ip")
-#     port = net_conf.get("device_port")
-#     for attempt in range(retries):
-#         try:
-#             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-#                 s.settimeout(timeout)
-#                 s.connect((ip, port))
-#                 s.sendall(command.encode())
-#                 return f'Done!'
-#         except socket.timeout:
-#             logger.debug(f'Timeout on attempt {attempt + 1} for command: {command}')
-#         except socket.error as e:
-#             logger.debug(f'Socket error on attempt {attempt + 1}: {e}')
-
-#     logger.debug(f'Error: Network operation failed after several attempts.')
-#     return "Error: Network operation failed after several attempts."
 
 def send_to_device(client_socket, line, data):
     """
